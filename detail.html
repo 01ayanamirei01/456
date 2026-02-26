@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ book.title }}</h1>
+<p><b>Автор:</b> {{ book.author|default:"—" }}</p>
+<p><b>ISBN:</b> {{ book.isbn }}</p>
+<p><b>Год:</b> {{ book.publication_year }}</p>
+<p><b>Жанры:</b> {{ book.genres }}</p>
+<p><b>Соавторы:</b> {{ book.co_authors }}</p>
+<p><b>Описание:</b> {{ book.summary|default:"—" }}</p>
+
+<p>
+  <a href="/books/{{ book.id }}/edit/">Редактировать</a> |
+  <a href="/books/{{ book.id }}/delete/">Удалить</a> |
+  <a href="/books/">Назад</a>
+</p>
+{% endblock %}
